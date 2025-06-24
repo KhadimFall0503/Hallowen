@@ -1,0 +1,67 @@
+.home {
+  position: relative;
+  background: url("../assets/fond.jpg") no-repeat center center/cover;
+  height: 90vh;
+  width: 100%;
+  max-width: 1250px;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 20px;
+  animation: overlayPulse 6s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+  0%,
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.text-box {
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.btn-warning {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ffb347;
+  box-shadow: 0 0 10px #ffb347;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home {
+    height: 70vh;
+    margin: 0.5rem;
+    border-radius: 10px;
+  }
+  .text-box {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}
