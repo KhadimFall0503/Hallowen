@@ -1,5 +1,6 @@
 import "../styles/Home.css";
 import CandiesList from "../components/CandiesList";
+import Sweet from "../components/Sweet";
 
 function Home() {
   return (
@@ -38,6 +39,8 @@ function Home() {
         </h2>
         <CandiesList />
       </section>
+      {/* Section présentation */}
+      <Sweet />
     </div>
   );
 }
