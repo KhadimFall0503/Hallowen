@@ -1,15 +1,11 @@
-import "../styles/Home.css";
-import CandiesList from "../components/CandiesList";
-import Sweet from "../components/Sweet";
-import Declaration from "../components/Declaration";
-import Ceramic from "../components/Ceramic";
+import "../styles/Ceramic.css";
 
-function Home() {
+function Ceramic() {
   return (
-    <div className="home-page">
+    <div className="ceramic-page pt-5">
       {/* Section d'accueil / bannière */}
       <div
-        className="home text-white d-flex align-items-center"
+        className="ceramic text-white d-flex align-items-center"
         style={{ minHeight: "80vh" }}
       >
         <section className="container content py-5">
@@ -33,20 +29,8 @@ function Home() {
           </a>
         </section>
       </div>
-
-      {/* Section des bonbons */}
-      <section className="container my-5">
-        <h2 className="text-center text-white fw-bold mb-4 fs-1 fw-bold">
-          Candies & Cookies
-        </h2>
-        <CandiesList />
-      </section>
-      {/* Section présentation */}
-      <Sweet />
-      <Declaration />
-      <Ceramic />
     </div>
   );
 }
 
-export default Home;
+export default Ceramic;

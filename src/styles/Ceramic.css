@@ -1,6 +1,6 @@
-.home {
+.ceramic {
   position: relative;
-  background: url("../assets/fond.jpg") no-repeat center center/cover;
+  background: url("../assets/hallowen.avif") no-repeat center center/cover;
   height: 90vh;
   width: 100%;
   max-width: 1250px;
@@ -12,12 +12,8 @@
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
-h1,
-h2 {
-  font-family: "Aladin", cursive;
-}
 
-.home::before {
+.ceramic::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -59,11 +55,12 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .home {
+  .ceramic {
     height: 70vh;
     margin: 0.5rem;
     border-radius: 10px;
   }
+
   .text-box {
     max-width: 100%;
     font-size: 1rem;

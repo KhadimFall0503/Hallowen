@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/CandiesList.css";
+import DetailModal from "../pages/DetailModal"; // 👈 On crée ce composant après
 
 function CandiesList() {
   const [candies, setCandies] = useState([]);
+  const [selectedCandy, setSelectedCandy] = useState(null);
 
   useEffect(() => {
     const getCandies = async () => {
@@ -22,14 +24,20 @@ function CandiesList() {
   };
 
   return (
-    <section className="candies-wrapper">
-      <h2 className="section-title">Nos Bonbons d'Halloween</h2>
+    <section className="candies-wrapper modern">
+      <h2 className="section-title">🍬 Nos Bonbons d'Halloween</h2>
       <div className="candies-grid">
         {candies.map((candy) => (
           <div key={candy.id} className="candy-card">
-            <img src={candy.image} alt={candy.name} className="candy-image" />
+            <img
+              src={candy.image}
+              alt={candy.name}
+              className="candy-image"
+              onClick={() => setSelectedCandy(candy)} // 👈 ouvrir la modal
+              style={{ cursor: "pointer" }}
+            />
             <div className="candy-info">
-              <h3 className="fw-bold">{candy.name}</h3>
+              <h3 className="candy-name fw-bold">{candy.name}</h3>
               <p className="description">{candy.description}</p>
               <p className="price">{candy.price} €</p>
               <button
@@ -42,8 +50,17 @@ function CandiesList() {
           </div>
         ))}
       </div>
+
+      {/* Modal */}
+      {selectedCandy && (
+        <DetailModal
+          candy={selectedCandy}
+          onClose={() => setSelectedCandy(null)}
+        />
+      )}
     </section>
   );
 }
 
 export default CandiesList;
+// CandiesList.jsx

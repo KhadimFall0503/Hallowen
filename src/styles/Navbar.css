@@ -8,6 +8,8 @@
 .navbar-brand {
   color: white !important;
   font-weight: 600;
+  font-family: "Aladin", cursive;
+  font-size: 2rem;
 }
 .navbar {
   background-color: #121212;
