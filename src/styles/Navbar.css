@@ -3,8 +3,13 @@
   font-weight: 600;
 }
 .navbar .nav-link:hover {
-  color: #ffc107 !important;
+  background: linear-gradient(45deg, #ff9800, #ffc107);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
+
 .navbar-brand {
   color: white !important;
   font-weight: 600;

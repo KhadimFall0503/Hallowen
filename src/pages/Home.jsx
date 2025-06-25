@@ -3,6 +3,7 @@ import CandiesList from "../components/CandiesList";
 import Sweet from "../components/Sweet";
 import Declaration from "../components/Declaration";
 import Ceramic from "../components/Ceramic";
+import Testimonials from "../components/Testimonials";
 
 function Home() {
   return (
@@ -45,6 +46,7 @@ function Home() {
       <Sweet />
       <Declaration />
       <Ceramic />
+      <Testimonials />
     </div>
   );
 }
