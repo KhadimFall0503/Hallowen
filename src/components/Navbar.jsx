@@ -1,18 +1,17 @@
 import "../styles/Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
-// Assurez-vous d'avoir ce fichier CSS pour les styles personnalisés
 
 function Navbar() {
   // Exemple : nombre d'articles dans le panier (à remplacer par un état réel)
-  const cartCount = 3; // Remplacez ceci par votre logique pour obtenir le nombre d'articles dans le panier
+  const cartCount = 3; // Remplace ceci par ta logique de panier
 
   return (
-    <nav className="navbar navbar-expand-lg  p-3">
+    <nav className="navbar navbar-expand-lg p-3">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <NavLink to="/" className="navbar-brand" end>
           HALLOWEEN SHOP
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,27 +27,53 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 HOME
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/shop">
+              <NavLink
+                to="/shop"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 SHOP
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 ABOUT
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 CONTACT
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item position-relative ms-3">
-              <Link to="/cart" className="nav-link">
+              <NavLink
+                to="/cart"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 <ShoppingCart size={24} />
                 {cartCount > 0 && (
                   <span
@@ -70,7 +95,7 @@ function Navbar() {
                     {cartCount}
                   </span>
                 )}
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

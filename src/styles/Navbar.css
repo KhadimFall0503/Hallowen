@@ -9,6 +9,16 @@
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
+.navbar .nav-link.active {
+  background: linear-gradient(45deg, #ff9800, #ffc107);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  /* Optionnel : ajouter un soulignement */
+  border-bottom: 2px solid #ff9800;
+  padding-bottom: 0.25rem;
+}
 
 .navbar-brand {
   color: white !important;
