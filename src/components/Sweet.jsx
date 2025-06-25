@@ -7,7 +7,7 @@ function Sweet() {
       <hr />
       <h1 className="pt-5 text-center fw-bold">L'univers sucré d'Halloween</h1>
 
-      <div className="row g-4 align-items-center justify-content-between pt-5">
+      <div className="row g-4 align-items-center justify-content-between pt-5 mb-5">
         <div className="col-md-6">
           <h3 className="fs-2">
             Une pincée de magie pour chaque aventure de chasse aux bonbons.

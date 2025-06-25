@@ -29,8 +29,8 @@ function Declaration() {
   };
 
   return (
-    <section className="declaration candies-wrapper modern">
-      <div className="container">
+    <section className="declaration candies-wrapper modern container">
+      <div>
         <h2 className="section-title">🎃 Nos Décorations Halloween</h2>
         <div className="candies-grid">
           {decorations.map((decoration) => (
