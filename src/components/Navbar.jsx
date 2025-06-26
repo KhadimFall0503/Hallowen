@@ -1,17 +1,22 @@
-import "../styles/Navbar.css";
 import { NavLink } from "react-router-dom";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Ghost } from "lucide-react";
+import "../styles/Navbar.css";
 
 function Navbar() {
-  // Exemple : nombre d'articles dans le panier (à remplacer par un état réel)
-  const cartCount = 3; // Remplace ceci par ta logique de panier
+  const cartCount = 3;
 
   return (
     <nav className="navbar navbar-expand-lg p-3">
       <div className="container">
-        <NavLink to="/" className="navbar-brand" end>
+        <NavLink
+          to="/"
+          className="navbar-brand d-flex align-items-center gap-2"
+          end
+        >
+          <Ghost size={32} color="#ffc107" />
           HALLOWEEN SHOP
         </NavLink>
+
         <button
           className="navbar-toggler"
           type="button"

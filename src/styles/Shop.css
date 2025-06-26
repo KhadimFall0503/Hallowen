@@ -1,0 +1,55 @@
+.shop-banner {
+  position: relative;
+  background: url("../assets/shop.avif") no-repeat center center/cover;
+  min-height: 90vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+
+  margin: 1rem auto;
+  max-width: 1250px;
+}
+
+.shop-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* plus sombre */
+  z-index: 1;
+  border-radius: 20px;
+  animation: overlayPulse 6s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+  0%,
+  100% {
+    background-color: rgba(0, 0, 0, 0.7); /* plus sombre */
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.8); /* plus sombre */
+  }
+}
+
+.shop-banner .content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.text-box {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.btn-warning {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ffb347;
+  box-shadow: 0 0 10px #ffb347;
+}

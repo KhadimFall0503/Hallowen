@@ -1,0 +1,71 @@
+.about-page {
+  background-color: #121212;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.about-banner {
+  position: relative;
+  background: url("../assets/hallowenA.avif") no-repeat center center/cover;
+  min-height: 90vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+
+  max-width: 1250px;
+  margin: 1rem auto;
+}
+
+.about-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Plus sombre */
+  z-index: 1;
+  border-radius: 20px;
+  animation: overlayPulseAbout 6s ease-in-out infinite;
+}
+
+@keyframes overlayPulseAbout {
+  0%,
+  100% {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.about-banner .content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.text-box {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 1.15rem;
+}
+
+/* Texte blanc pour la section histoire */
+.row.align-items-center.text-white p,
+.row.align-items-center.text-white h2 {
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-banner {
+    min-height: 70vh;
+    margin: 0.5rem;
+    border-radius: 10px;
+  }
+  .text-box {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}

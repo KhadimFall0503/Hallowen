@@ -1,0 +1,88 @@
+/* Contact.css */
+
+.contact-page {
+  background-color: #121212;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+.contact-banner {
+  position: relative;
+  background: url("../assets/contact.avif") no-repeat center center/cover;
+  min-height: 90vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+  max-width: 1250px;
+  margin: 1rem auto;
+}
+
+.contact-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* ombre plus sombre */
+  z-index: 1;
+  border-radius: 20px;
+  animation: overlayPulseContact 6s ease-in-out infinite;
+}
+
+@keyframes overlayPulseContact {
+  0%,
+  100% {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.contact-banner .content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+.text-box {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.btn-warning {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ffb347;
+  box-shadow: 0 0 10px #ffb347;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-banner {
+    min-height: 70vh;
+    margin: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .text-box {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+}
+.map-responsive {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.map-responsive iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+}

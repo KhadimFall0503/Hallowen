@@ -1,4 +1,5 @@
 import "../styles/Home.css";
+
 import CandiesList from "../components/CandiesList";
 import Sweet from "../components/Sweet";
 import Declaration from "../components/Declaration";
@@ -9,10 +10,7 @@ function Home() {
   return (
     <div className="home-page">
       {/* Section d'accueil / bannière */}
-      <div
-        className="home text-white d-flex align-items-center"
-        style={{ minHeight: "80vh" }}
-      >
+      <div className="home text-white d-flex align-items-center">
         <section className="container content py-5">
           <small className="text-warning text-uppercase fw-semibold fs-5">
             NEW COLLECTION

@@ -1,0 +1,70 @@
+.footer {
+  background-color: #121212;
+  color: white;
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-logo {
+  font-family: "Aladin", cursive;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: orange;
+}
+
+.footer-text {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.footer-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: orange;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: orange;
+}
+
+.footer-socials a {
+  color: white;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: orange;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  color: #999;
+  font-size: 0.85rem;
+}
