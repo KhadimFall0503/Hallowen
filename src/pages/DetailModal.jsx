@@ -1,9 +1,9 @@
 // DetailModal.jsx
 import React from "react";
-import "../styles/CandiesList.css";
+import "../styles/ProductList.css";
 
-function DetailModal({ candy, onClose }) {
-  if (!candy) return null;
+function DetailModal({ product, onClose }) {
+  if (!product) return null;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -16,13 +16,13 @@ function DetailModal({ candy, onClose }) {
           &times;
         </button>
         <img
-          src={candy.image || "https://via.placeholder.com/400x300"}
-          alt={candy.name}
+          src={product.image || "https://via.placeholder.com/400x300"}
+          alt={product.name}
           className="modal-image mb-3"
         />
-        <h2 className="text-warning">{candy.name}</h2>
-        <p>{candy.description}</p>
-        <p className="price">{candy.price} €</p>
+        <h2 className="text-warning">{product.name}</h2>
+        <p>{product.description}</p>
+        <p className="price">{product.price} FCFA</p>
       </div>
     </div>
   );

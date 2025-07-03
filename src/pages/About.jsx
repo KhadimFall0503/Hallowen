@@ -1,5 +1,6 @@
 import "../styles/About.css";
-import hallowen from "../assets/hallowen.avif";
+import hallowen from "../assets/hallowen.avif"; // Remplace par une image plus adaptée si disponible
+
 function About() {
   return (
     <div className="about-page">
@@ -11,10 +12,11 @@ function About() {
           </small>
           <h1 className="display-4 fw-bold mt-2">QUI SOMMES-NOUS ?</h1>
           <p className="mt-3 text-box">
-            Bienvenue sur Halloween Shop, votre destination privilégiée pour
-            toutes les décorations et friandises effrayantes. Notre passion est
-            de rendre votre Halloween inoubliable grâce à une sélection unique
-            de produits.
+            Bienvenue sur notre boutique mouride, spécialisée dans la vente
+            d’articles religieux : Baye La, Xassidas, chapelets, tableaux,
+            livres islamiques et plus encore. Notre mission est de promouvoir
+            les valeurs spirituelles à travers des objets authentiques et
+            utiles.
           </p>
           <a
             href="/"
@@ -26,22 +28,24 @@ function About() {
           </a>
         </section>
       </div>
+
       {/* Section de présentation de l'entreprise */}
       <div className="container my-5">
         <div className="row align-items-center text-white">
           <div className="col-md-6">
             <h2 className="fw-bold mb-4">Notre Histoire</h2>
             <p>
-              Fondée en 2023, Halloween Shop est née de l'amour pour la fête
-              d'Halloween et le désir de partager cette passion avec le monde.
-              Notre équipe dévouée travaille toute l'année pour vous offrir les
-              meilleures décorations et friandises.
+              Fondée en 2023 par des disciples engagés, notre boutique est née
+              de la volonté de rendre accessibles les objets spirituels qui
+              accompagnent la pratique du mouridisme. Depuis nos débuts, nous
+              mettons un point d'honneur à proposer des produits de qualité,
+              respectueux de nos traditions.
             </p>
           </div>
           <div className="col-md-6">
             <img
               src={hallowen}
-              alt="Notre histoire Halloween Shop"
+              alt="Notre histoire - Boutique Mouride"
               className="img-fluid rounded shadow"
             />
           </div>

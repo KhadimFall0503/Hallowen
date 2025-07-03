@@ -24,7 +24,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* ombre plus sombre */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
   border-radius: 20px;
   animation: overlayPulseContact 6s ease-in-out infinite;
@@ -52,13 +52,75 @@
   font-size: 1.1rem;
 }
 
-.btn-warning {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+form {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.1);
 }
 
-.btn-warning:hover {
-  background-color: #ffb347;
-  box-shadow: 0 0 10px #ffb347;
+.form-label {
+  font-weight: 600;
+  color: #ffc107;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #ffc107;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 150px;
+}
+
+form .btn-warning {
+  background: linear-gradient(45deg, #ff9800, #ffc107);
+  color: #000;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s;
+  margin-top: 1rem;
+}
+
+form .btn-warning:hover {
+  background: linear-gradient(45deg, #ffc107, #ff9800);
+  box-shadow: 0 0 12px #ff9800aa;
+  transform: scale(1.03);
+}
+
+.contact-page h2 {
+  color: #ffc107;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.map-responsive {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.map-responsive iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 10px;
 }
 
 /* Responsive */
@@ -73,16 +135,8 @@
     max-width: 100%;
     font-size: 1rem;
   }
-}
-.map-responsive {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  border-radius: 10px;
-}
 
-.map-responsive iframe {
-  width: 100%;
-  border: 0;
-  border-radius: 10px;
+  form {
+    padding: 1.5rem;
+  }
 }

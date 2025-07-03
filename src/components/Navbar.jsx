@@ -14,7 +14,7 @@ function Navbar() {
           end
         >
           <Ghost size={32} color="#ffc107" />
-          HALLOWEEN SHOP
+          MOURIDE SHOP
         </NavLink>
 
         <button

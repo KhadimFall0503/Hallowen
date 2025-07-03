@@ -1,10 +1,10 @@
 import "../styles/Shop.css";
-import CandiesList from "../components/CandiesList";
+import ProductList from "../components/ProductList";
 import Declaration from "../components/Declaration";
 
 function Shop() {
   return (
-    <div className="shop-page ">
+    <div className="shop-page">
       {/* Bannière d'accueil de la page Shop */}
       <div className="shop-banner">
         <section className="container content py-5">
@@ -13,9 +13,10 @@ function Shop() {
           </small>
           <h1 className="display-4 fw-bold mt-2">TOUS NOS PRODUITS</h1>
           <p className="mt-3 text-box">
-            Découvrez toutes nos décorations, bonbons et accessoires pour un
-            Halloween magique et terrifiant. Faites votre choix parmi une
-            sélection unique !
+            Explorez notre sélection d’accessoires inspirés de la tradition
+            mouride : Baye La, Xassidas, chapelets, encens, images pieuses et
+            autres objets spirituels pour nourrir votre foi et embellir votre
+            quotidien.
           </p>
           <a
             href="/"
@@ -27,9 +28,10 @@ function Shop() {
           </a>
         </section>
       </div>
-      {/* produits candies */}
+
+      {/* Produits : section d’affichage */}
       <div className="container">
-        <CandiesList />
+        <ProductList />
         <Declaration />
       </div>
     </div>

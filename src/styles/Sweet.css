@@ -11,8 +11,11 @@
   transform: scale(1.02);
 }
 
-.sweet h1 {
+.sweet h2 {
   font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Aladin", cursive;
+  color: white;
 }
 
 .sweet h3 {
@@ -20,19 +23,28 @@
   font-weight: bold;
   font-style: italic;
   font-family: "Aladin", cursive;
+  color: #8e44ad;
 }
 
 .sweet p {
   font-size: 1.1rem;
   line-height: 1.7;
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 .btn-warning {
   background: linear-gradient(45deg, #ff9800, #ffc107);
   border: none;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  transition: background 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
 }
 
 .btn-warning:hover {
-  background-color: #e68900;
+  background: linear-gradient(45deg, #e68900, #ffca28);
+  transform: scale(1.02);
 }

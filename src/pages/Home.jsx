@@ -1,6 +1,6 @@
 import "../styles/Home.css";
 
-import CandiesList from "../components/CandiesList";
+import ProductList from "../components/ProductList";
 import Sweet from "../components/Sweet";
 import Declaration from "../components/Declaration";
 import Ceramic from "../components/Ceramic";
@@ -13,34 +13,35 @@ function Home() {
       <div className="home text-white d-flex align-items-center">
         <section className="container content py-5">
           <small className="text-warning text-uppercase fw-semibold fs-5">
-            NEW COLLECTION
+            NOUVELLE COLLECTION
           </small>
-          <h1 className="display-4 fw-bold mt-2">HALLOWEEN DECORATIONS</h1>
+          <h1 className="display-4 fw-bold mt-2">MOURIDE SHOP</h1>
           <p className="mt-3 text-box">
-            Que vous préfériez le charme de la décoration d’Halloween classique
-            ou le frisson des designs modernes et innovants, ces décorations
-            vous invitent à célébrer tout ce qui est étrange, énigmatique et
-            envoûtant.
+            Bienvenue sur Mouride Shop, la boutique dédiée à l'héritage
+            spirituel et culturel du mouridisme. Retrouvez une sélection
+            d’objets religieux et culturels : Baye Lahat, Xassidas, chapelets,
+            encens, sandales, tissus traditionnels et plus encore.
           </p>
           <a
-            href="/"
+            href="/shop"
             className="btn btn-warning fw-bold text-white btn-lg mt-4"
             role="button"
-            aria-label="Shop Halloween Decorations"
+            aria-label="Voir les produits"
           >
-            SHOP NOW
+            DÉCOUVRIR LES PRODUITS
           </a>
         </section>
       </div>
 
-      {/* Section des bonbons */}
+      {/* Section des produits */}
       <section className="container my-5">
-        <h2 className="text-center text-white fw-bold mb-4 fs-1 fw-bold">
-          Candies & Cookies
+        <h2 className="text-center text-warning fw-bold mb-4 fs-1">
+          Produits Recommandés
         </h2>
-        <CandiesList />
+        <ProductList />
       </section>
-      {/* Section présentation */}
+
+      {/* Sections personnalisables */}
       <Sweet />
       <Declaration />
       <Ceramic />

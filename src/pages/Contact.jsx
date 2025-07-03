@@ -7,13 +7,14 @@ function Contact() {
       <div className="contact-banner">
         <section className="container content py-5">
           <small className="text-warning text-uppercase fw-semibold fs-5">
-            CONTACTEZ-NOUS
+            NOUS CONTACTER
           </small>
-          <h1 className="display-4 fw-bold mt-2">NOUS SOMMES À VOTRE ÉCOUTE</h1>
+          <h1 className="display-4 fw-bold mt-2">À VOTRE ÉCOUTE</h1>
           <p className="mt-3 text-box">
-            Vous avez des questions, des suggestions ou besoin d'aide ?
-            N'hésitez pas à nous contacter. Nous sommes là pour vous aider à
-            préparer le Halloween parfait.
+            Une question sur nos produits religieux ? Besoin d’un conseil ou
+            d’un article personnalisé ? N'hésitez pas à nous écrire. Nous
+            répondons rapidement pour vous accompagner dans votre cheminement
+            spirituel.
           </p>
           <a
             href="/"
@@ -21,7 +22,7 @@ function Contact() {
             role="button"
             aria-label="Retour à l'accueil"
           >
-            RETOUR ACCUEIL
+            RETOUR À L'ACCUEIL
           </a>
         </section>
       </div>
@@ -41,7 +42,7 @@ function Contact() {
                   type="text"
                   className="form-control"
                   id="name"
-                  placeholder="Votre nom"
+                  placeholder="Votre nom complet"
                   required
                 />
               </div>
@@ -53,7 +54,7 @@ function Contact() {
                   type="email"
                   className="form-control"
                   id="email"
-                  placeholder="Votre email"
+                  placeholder="exemple@domaine.com"
                   required
                 />
               </div>
@@ -65,7 +66,7 @@ function Contact() {
                   className="form-control"
                   id="message"
                   rows="4"
-                  placeholder="Votre message"
+                  placeholder="Votre message ou demande spécifique"
                   required
                 ></textarea>
               </div>
@@ -80,11 +81,11 @@ function Contact() {
 
           {/* Carte (map) */}
           <div className="col-md-6">
-            <h2 className="text-white fw-bold mb-4">Notre Localisation</h2>
+            <h2 className="text-white fw-bold mb-4">Où Nous Trouver</h2>
             <div className="map-responsive shadow rounded">
               <iframe
-                title="Google Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019516460584!2d-122.41941558468144!3d37.77492977975954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c76e0e2d3%3A0x0!2sHalloween%20Shop!5e0!3m2!1sfr!2sfr!4v1615332526239!5m2!1sfr!2sfr"
+                title="Carte de localisation"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7732.441527243992!2d-17.4497485!3d14.7166771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172b24f51b7ad%3A0x60ab3391b9f0d2a!2sTouba%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2ssn!4v1620200000000"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}
