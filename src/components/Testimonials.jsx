@@ -3,33 +3,33 @@ import "../styles/Testimonials.css";
 const testimonialsData = [
   {
     id: 1,
-    name: "Amélie R.",
-    text: "J’ai commandé des décorations et des bonbons, tout était parfait et bien emballé. Mes enfants ont adoré !",
-    img: "/images/amelie.jpg",
-    bgClass: "bg-warning",
+    name: "Aminata D.",
+    text: "Les objets achetés ont renforcé ma foi et apporté une paix profonde. Boutique sérieuse et respectueuse de la tradition.",
+    img: "/images/aminata.jpg",
+    bgClass: "bg-mouride",
   },
   {
     id: 2,
-    name: "Kévin M.",
-    text: "Livraison rapide, produits originaux, ambiance Halloween garantie !",
-    img: "/images/kevin.jpg",
-    bgClass: "", // pas de bg-warning ici
+    name: "Serigne M.",
+    text: "Livraison rapide, qualité des produits irréprochable. Un vrai lien avec notre héritage spirituel.",
+    img: "/images/serigne.jpg",
+    bgClass: "",
   },
   {
     id: 3,
-    name: "Sophie T.",
-    text: "Super boutique Halloween, je recommande ! Interface agréable et service client réactif.",
-    img: "/images/sophie.jpg",
-    bgClass: "bg-warning",
+    name: "Fatou S.",
+    text: "Un service chaleureux, des articles authentiques. Une vraie lumière dans mon cheminement spirituel.",
+    img: "/images/fatou.jpg",
+    bgClass: "bg-mouride",
   },
 ];
 
 function Testimonials() {
   return (
-    <section className="testimonials py-5 bg-dark text-white">
+    <section className="testimonials py-5 bg-dark text-light">
       <div className="container">
-        <h1 className="text-center mb-5 section-title text-white fs-1 fw-bold">
-          Témoignages Clients
+        <h1 className="text-center mb-5 section-title text-warning fs-1 fw-bold">
+          Témoignages de Nos Clients
         </h1>
         <div
           id="testimonialCarousel"
@@ -48,9 +48,9 @@ function Testimonials() {
                   <img
                     src={testimonial.img}
                     alt={testimonial.name}
-                    className="testimonial-avatar mb-3"
+                    className="testimonial-avatar mb-3 rounded-circle border border-warning"
                   />
-                  <p className="testimonial-text text-dark">{`“${testimonial.text}”`}</p>
+                  <p className="testimonial-text fst-italic text-dark">{`“${testimonial.text}”`}</p>
                   <h5 className="mt-3 fw-bold text-dark">
                     — {testimonial.name}
                   </h5>
@@ -59,14 +59,18 @@ function Testimonials() {
             ))}
           </div>
 
-          {/* Contrôles gauche / droite */}
+          {/* Contrôles */}
           <button
             className="carousel-control-prev"
             type="button"
             data-bs-target="#testimonialCarousel"
             data-bs-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span
+              className="carousel-control-prev-icon"
+              style={{ filter: "invert(1)" }}
+              aria-hidden="true"
+            />
             <span className="visually-hidden">Précédent</span>
           </button>
           <button
@@ -75,7 +79,11 @@ function Testimonials() {
             data-bs-target="#testimonialCarousel"
             data-bs-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span
+              className="carousel-control-next-icon"
+              style={{ filter: "invert(1)" }}
+              aria-hidden="true"
+            />
             <span className="visually-hidden">Suivant</span>
           </button>
         </div>

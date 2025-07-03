@@ -10,12 +10,13 @@ function Footer() {
         <div className="footer-grid">
           {/* Logo / Nom */}
           <div className="footer-section">
-            <h2 className="footer-logo d-flex align-items-center">
+            <h2 className="footer-logo d-flex align-items-center text-white fw-bold">
               <Ghost size={28} color="#ffc107" style={{ marginRight: "8px" }} />
-              Halloween Shop
+              MOURIDE-SHOP
             </h2>
             <p className="footer-text">
-              Des décorations et friandises pour un Halloween inoubliable !
+              Objets religieux et culturels pour nourrir votre foi et votre
+              tradition.
             </p>
           </div>
 
@@ -58,7 +59,7 @@ function Footer() {
         {/* Bas de page */}
         <div className="footer-bottom text-center mt-4">
           <small>
-            &copy; {new Date().getFullYear()} Halloween Shop. Tous droits
+            &copy; {new Date().getFullYear()} Mouride-Shop. Tous droits
             réservés. Créé par Khadim Fall.
           </small>
         </div>

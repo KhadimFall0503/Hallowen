@@ -21,29 +21,31 @@ function ProductsList() {
 
   const handleAddToCart = (product) => {
     console.log("Ajouté au panier :", product.name);
-    // Tu peux connecter ici avec ton système de panier global (ex: context ou redux)
+    // TODO : connecter avec panier global (context, redux, etc.)
   };
 
   return (
     <section className="candies-wrapper modern">
-      {/* Supprimé le <h2> */}
       <div className="candies-grid">
         {products.map((item) => (
-          <div key={item.id} className="candy-card">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="candy-image"
+          <div key={item.id} className="candy-card shadow-lg">
+            <div
+              className="image-container"
               onClick={() => setSelectedProduct(item)}
               style={{ cursor: "pointer" }}
-            />
+            >
+              <img src={item.image} alt={item.name} className="candy-image" />
+            </div>
             <div className="candy-info">
-              <h3 className="candy-name fw-bold">{item.name}</h3>
+              <h3 className="candy-name fw-bold fs-4 text-warning">
+                {item.name}
+              </h3>
               <p className="description">{item.description}</p>
               <p className="price fw-semibold">{item.price} FCFA</p>
               <button
                 onClick={() => handleAddToCart(item)}
                 className="btn-cart"
+                aria-label={`Ajouter ${item.name} au panier`}
               >
                 🛍️ Ajouter au panier
               </button>
@@ -52,7 +54,6 @@ function ProductsList() {
         ))}
       </div>
 
-      {/* Modal de détails */}
       {selectedProduct && (
         <DetailModal
           product={selectedProduct}

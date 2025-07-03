@@ -2,7 +2,7 @@ import "../styles/Home.css";
 
 import ProductList from "../components/ProductList";
 import Sweet from "../components/Sweet";
-import Declaration from "../components/Declaration";
+import Declaration from "../components/Decorations";
 import Ceramic from "../components/Ceramic";
 import Testimonials from "../components/Testimonials";
 

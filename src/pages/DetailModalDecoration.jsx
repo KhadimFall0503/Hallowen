@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../styles/Declaration.css"; // même fichier que pour les styles globaux
+import "../styles/Decorations.css"; // même fichier que pour les styles globaux
 
 function DetailModalDecoration({ decoration, onClose }) {
   useEffect(() => {

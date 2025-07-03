@@ -27,10 +27,10 @@
 }
 
 .candy-name {
-  font-size: 1.1rem; /* réduire un peu */
+  font-size: 1.1rem;
   font-weight: 700;
   color: #ffc107;
-  margin-bottom: 0.3rem; /* réduire marge */
+  margin-bottom: 0.1rem; /* réduire marge */
 }
 
 .description {
@@ -44,7 +44,6 @@
   font-size: 1rem; /* réduire un peu */
   font-weight: bold;
   color: #ff9800;
-  margin-top: 0.6rem;
 }
 
 .btn-cart {

@@ -1,6 +1,6 @@
 import "../styles/Shop.css";
 import ProductList from "../components/ProductList";
-import Declaration from "../components/Declaration";
+import Declaration from "../components/Decorations";
 
 function Shop() {
   return (

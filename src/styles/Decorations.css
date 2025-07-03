@@ -4,6 +4,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
   margin: 0;
+  color: #eee; /* Texte clair par défaut */
 }
 
 .container {
@@ -18,6 +19,8 @@ body {
   padding: 3rem 1rem;
   background-color: #1a1a1a;
   color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
 }
 
 .section-title {
@@ -26,6 +29,8 @@ body {
   margin-bottom: 3rem;
   color: #ffc107;
   font-family: "Aladin", cursive;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .candies-grid {
@@ -41,6 +46,9 @@ body {
   box-shadow: 0 4px 20px rgba(255, 152, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .candy-card:hover {
@@ -65,6 +73,9 @@ body {
 
 .candy-name {
   font-family: "Aladin", cursive;
+  font-size: 1.4rem;
+  color: #ff9800;
+  margin-bottom: 0.3rem;
 }
 
 .decor {
@@ -76,6 +87,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  flex-grow: 1;
 }
 
 .description {
@@ -83,6 +95,7 @@ body {
   line-height: 1.6;
   color: #cccccc;
   min-height: 60px;
+  flex-grow: 1;
 }
 
 .price {
@@ -99,14 +112,17 @@ body {
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+  transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
   margin-top: auto;
+  align-self: flex-start;
 }
 
-.btn-cart:hover {
+.btn-cart:hover,
+.btn-cart:focus {
   background: linear-gradient(45deg, #ff9800, #ffc107);
   transform: scale(1.03);
   box-shadow: 0 0 10px #ff9800;
+  outline: none;
 }
 
 /* Modal */
@@ -157,8 +173,10 @@ body {
   transition: color 0.3s ease;
 }
 
-.close-btn:hover {
+.close-btn:hover,
+.close-btn:focus {
   color: #ff5722;
+  outline: none;
 }
 
 @keyframes zoomIn {
