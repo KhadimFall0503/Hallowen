@@ -1,55 +1,271 @@
+.shop-page {
+  background-color: #121212;
+  color: #f5f5f5;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Bannière */
 .shop-banner {
-  position: relative;
-  background: url("../assets/shop.avif") no-repeat center center/cover;
-  min-height: 90vh;
-  color: white;
+  background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.75)),
+    url("../assets/shop.avif") center/cover no-repeat;
+  height: 90vh;
+  width: 100%;
+  max-width: 1250px;
+  margin: 1rem auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
-
-  margin: 1rem auto;
-  max-width: 1250px;
+  animation: bannerPulse 25s ease-in-out infinite alternate;
+  color: #ffc107;
 }
 
-.shop-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* plus sombre */
-  z-index: 1;
-  border-radius: 20px;
-  animation: overlayPulse 6s ease-in-out infinite;
-}
-
-@keyframes overlayPulse {
-  0%,
+@keyframes bannerPulse {
+  0% {
+    background-size: 100%;
+  }
   100% {
-    background-color: rgba(0, 0, 0, 0.7); /* plus sombre */
-  }
-  50% {
-    background-color: rgba(0, 0, 0, 0.8); /* plus sombre */
+    background-size: 115%;
   }
 }
 
-.shop-banner .content {
-  position: relative;
-  z-index: 2;
-  padding: 0 1rem;
-}
-
-.text-box {
-  max-width: 700px;
+.shop-banner .text-box {
+  max-width: 650px;
+  font-size: 1.2rem;
   line-height: 1.6;
-  font-size: 1.1rem;
+  color: white;
 }
 
-.btn-warning {
+.shop-banner .btn {
+  border-radius: 50px;
+  padding: 0.75rem 2.5rem;
+  font-weight: 700;
+  box-shadow: 0 6px 15px rgba(255, 193, 7, 0.5);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-warning:hover {
-  background-color: #ffb347;
-  box-shadow: 0 0 10px #ffb347;
+.shop-banner .btn:hover,
+.shop-banner .btn:focus {
+  background-color: #e0a800;
+  box-shadow: 0 8px 20px rgba(224, 168, 0, 0.75);
+  text-decoration: none;
+  outline: none;
+}
+
+/* Formulaire recherche */
+.shop-page form {
+  margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.shop-page form input {
+  flex: 1;
+  background-color: #1f1f1f;
+  border: 2px solid #444;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.shop-page form input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.shop-page form input:focus {
+  border-color: #ffc107;
+  background-color: #292929;
+  color: #fff;
+  outline: none;
+}
+
+.shop-page form button {
+  background-color: #ffc107;
+  color: #121212;
+  font-weight: 700;
+  border: none;
+  padding: 0 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.5);
+}
+
+.shop-page form button:hover,
+.shop-page form button:focus {
+  background-color: #e0a800;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(224, 168, 0, 0.75);
+  outline: none;
+}
+
+.shop-page form input:disabled,
+.shop-page form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Grille produits */
+.candies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes fixes */
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.candy-card {
+  background-color: #1e1e1e; /* fond sombre */
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255, 152, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ffb74d; /* bordure orange claire */
+  padding: 0.8rem 1rem;
+  color: #f5f5f5; /* texte clair */
+}
+
+.candy-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: #2a2a2a; /* fond image sombre */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.candy-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #ffb74dcc;
+}
+
+.candy-card:hover .candy-image {
+  transform: scale(1.05);
+}
+
+.candy-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffc107;
+  margin-bottom: 0.1rem;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #d0d0d0;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffb74d;
+}
+
+.btn-cart {
+  background: linear-gradient(45deg, #ffb74d, #ffc107);
+  color: #121212;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cart:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 14px #ffb74dcc;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #282828;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  position: relative;
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .candies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .candies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-banner {
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .shop-banner .text-box,
+  .shop-banner h1 {
+    text-align: center;
+  }
+
+  .shop-page form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .shop-page form input,
+  .shop-page form button {
+    width: 100%;
+    border-radius: 50px;
+  }
 }

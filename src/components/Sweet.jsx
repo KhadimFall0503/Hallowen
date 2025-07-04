@@ -1,4 +1,4 @@
-import Image from "../assets/product.jpg";
+import Image from "../assets/about.avif";
 import "../styles/Sweet.css";
 
 function Sweet() {

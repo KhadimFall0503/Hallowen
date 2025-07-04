@@ -7,10 +7,12 @@ function Decorations() {
   const [decorations, setDecorations] = useState([]);
   const [selectedDecoration, setSelectedDecoration] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getDecorations = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(
           "http://localhost:8000/api/decorations/"
         );
@@ -24,6 +26,8 @@ function Decorations() {
         setError(
           "Impossible de charger les articles spirituels. Veuillez réessayer plus tard."
         );
+      } finally {
+        setLoading(false);
       }
     };
     getDecorations();
@@ -34,41 +38,59 @@ function Decorations() {
     // TODO : connecter avec le panier global (context, Redux, etc.)
   };
 
+  // Carte produit simplifiée pour clarté
+  const DecorationCard = ({ item }) => (
+    <div key={item.id} className="decoration-card candy-card">
+      <img
+        src={item.image}
+        alt={item.name}
+        className="decoration-image candy-image"
+        onClick={() => setSelectedDecoration(item)}
+        style={{ cursor: "pointer" }}
+        tabIndex={0}
+        role="button"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            setSelectedDecoration(item);
+          }
+        }}
+      />
+      <div className="candy-info">
+        <h3 className="decor candy-name fw-bold text-warning">{item.name}</h3>
+        <p className="description">{item.description}</p>
+        <p className="price">{item.price} FCFA</p>
+        <button
+          onClick={() => handleAddToCart(item)}
+          className="btn-cart"
+          aria-label={`Ajouter ${item.name} au panier`}
+        >
+          Ajouter au panier
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <section className="declaration candies-wrapper modern container">
-      {/* TITRE placé en dehors de la grille */}
       <h2 className="section-title">🌙 Nos Articles Spirituels Mourides</h2>
 
+      {loading && <p className="text-center text-white py-3">Chargement...</p>}
       {error && <p className="text-danger text-center">{error}</p>}
 
-      {/* GRILLE des cartes */}
-      <div className="candies-grid">
-        {decorations.map((item) => (
-          <div key={item.id} className="decoration-card candy-card">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="decoration-image candy-image"
-              onClick={() => setSelectedDecoration(item)}
-              style={{ cursor: "pointer" }}
-            />
-            <div className="candy-info">
-              <h3 className="decor candy-name fw-bold">{item.name}</h3>
-              <p className="description">{item.description}</p>
-              <p className="price">{item.price} FCFA</p>
-              <button
-                onClick={() => handleAddToCart(item)}
-                className="btn-cart"
-                aria-label={`Ajouter ${item.name} au panier`}
-              >
-                Ajouter au panier
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+      {!loading && !error && (
+        <div className="candies-grid">
+          {decorations.length > 0 ? (
+            decorations.map((item) => (
+              <DecorationCard key={item.id} item={item} />
+            ))
+          ) : (
+            <p className="text-center text-warning">
+              Aucun article disponible.
+            </p>
+          )}
+        </div>
+      )}
 
-      {/* Modal pour détails */}
       {selectedDecoration && (
         <DetailModalDecoration
           decoration={selectedDecoration}

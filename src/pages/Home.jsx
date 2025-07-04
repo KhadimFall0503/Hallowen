@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "../styles/Home.css";
 
 import ProductList from "../components/ProductList";
@@ -5,8 +6,27 @@ import Sweet from "../components/Sweet";
 import Declaration from "../components/Decorations";
 import Ceramic from "../components/Ceramic";
 import Testimonials from "../components/Testimonials";
+import axios from "axios";
 
 function Home() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await axios.get("http://localhost:8000/api/products/");
+        setProducts(res.data);
+      } catch (err) {
+        console.error("Erreur récupération produits :", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="home-page">
       {/* Section d'accueil / bannière */}
@@ -38,10 +58,14 @@ function Home() {
         <h2 className="text-center text-warning fw-bold mb-4 fs-1">
           Produits Recommandés
         </h2>
-        <ProductList />
+        {loading ? (
+          <p className="text-center text-white">Chargement des produits...</p>
+        ) : (
+          <ProductList products={products} />
+        )}
       </section>
 
-      {/* Sections personnalisables */}
+      {/* Autres sections */}
       <Sweet />
       <Declaration />
       <Ceramic />

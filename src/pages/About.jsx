@@ -1,5 +1,5 @@
 import "../styles/About.css";
-import hallowen from "../assets/hallowen.avif"; // Remplace par une image plus adaptée si disponible
+import fond from "../assets/fond.jpg"; // Remplace par une image plus adaptée si disponible
 
 function About() {
   return (
@@ -41,10 +41,33 @@ function About() {
               mettons un point d'honneur à proposer des produits de qualité,
               respectueux de nos traditions.
             </p>
+            <p>
+              Inspirés par la sagesse et l'héritage du Cheikh Ahmadou Bamba,
+              nous cherchons à offrir à notre communauté des articles qui
+              nourrissent la foi et soutiennent le cheminement spirituel de
+              chacun. Chaque objet est soigneusement sélectionné, témoignant
+              d'un savoir-faire artisanal et d'une authenticité qui font la
+              richesse de notre boutique.
+            </p>
+            <p>
+              Au fil des années, nous avons tissé des liens solides avec des
+              artisans locaux et des fournisseurs dignes de confiance, afin de
+              garantir que chaque produit reflète à la fois la beauté et la
+              profondeur de la culture mouride. Notre engagement dépasse la
+              simple vente : il s'agit d'un véritable service rendu à la
+              communauté.
+            </p>
+            <p>
+              Nous croyons fermement que ces objets spirituels ne sont pas
+              seulement des produits, mais des porteurs de valeurs et de
+              mémoire. C’est pourquoi nous veillons à ce que chaque client
+              trouve ici bien plus qu’un article, mais un compagnon de route
+              pour sa foi et sa dévotion.
+            </p>
           </div>
           <div className="col-md-6">
             <img
-              src={hallowen}
+              src={fond}
               alt="Notre histoire - Boutique Mouride"
               className="img-fluid rounded shadow"
             />
