@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "../styles/Decorations.css";
 import DetailModalDecoration from "../pages/DetailModalDecoration";
 
@@ -10,6 +12,8 @@ function Decorations() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    AOS.init({ duration: 700, easing: "ease-in-out", once: true });
+
     const getDecorations = async () => {
       try {
         setLoading(true);
@@ -35,12 +39,17 @@ function Decorations() {
 
   const handleAddToCart = (decoration) => {
     console.log("Ajouté au panier :", decoration.name);
-    // TODO : connecter avec le panier global (context, Redux, etc.)
+    // TODO : connecter avec le panier global
   };
 
-  // Carte produit simplifiée pour clarté
-  const DecorationCard = ({ item }) => (
-    <div key={item.id} className="decoration-card candy-card">
+  // Carte produit avec animation
+  const DecorationCard = ({ item, index }) => (
+    <div
+      key={item.id}
+      className="decoration-card candy-card"
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
       <img
         src={item.image}
         alt={item.name}
@@ -72,7 +81,9 @@ function Decorations() {
 
   return (
     <section className="declaration candies-wrapper modern container">
-      <h2 className="section-title">🌙 Nos Articles Spirituels Mourides</h2>
+      <h2 className="section-title" data-aos="zoom-in">
+        🌙 Nos Articles Spirituels Mourides
+      </h2>
 
       {loading && <p className="text-center text-white py-3">Chargement...</p>}
       {error && <p className="text-danger text-center">{error}</p>}
@@ -80,8 +91,8 @@ function Decorations() {
       {!loading && !error && (
         <div className="candies-grid">
           {decorations.length > 0 ? (
-            decorations.map((item) => (
-              <DecorationCard key={item.id} item={item} />
+            decorations.map((item, index) => (
+              <DecorationCard key={item.id} item={item} index={index} />
             ))
           ) : (
             <p className="text-center text-warning">

@@ -1,7 +1,17 @@
-// ProductList.jsx
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function ProductList({ products = [], onSelectProduct }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 700, // vitesse plus douce
+      easing: "ease-in-out", // courbe fluide
+      once: true,
+      offset: 100,
+    });
+  }, []);
+
   if (!products.length) {
     return (
       <p className="text-white text-center py-4">Aucun produit disponible.</p>
@@ -10,12 +20,14 @@ function ProductList({ products = [], onSelectProduct }) {
 
   return (
     <div className="candies-grid">
-      {products.map((product) => (
+      {products.map((product, index) => (
         <div
           key={`${product.type}-${product.id}`}
           className="candy-card shadow-lg"
           role="group"
           aria-label={`Produit ${product.name}`}
+          data-aos="fade-up"
+          data-aos-delay={index * 100} // effet en cascade
         >
           <div
             className="image-container"
