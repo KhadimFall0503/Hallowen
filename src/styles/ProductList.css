@@ -1,115 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  margin: 0;
+  color: #eee;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.candies-wrapper {
+  padding: 3rem 1rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #ffc107;
+  font-family: "Aladin", cursive;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
 .candies-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
 }
 
 .candy-card {
-  background-color: #1e1e1e;
-  color: #f5f5f5;
-  border-radius: 16px;
+  background-color: #262626;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 25px rgba(255, 152, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 152, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid #ffb74d;
-  padding: 1.2rem 1.5rem; /* moins de padding vertical */
-  /* min-height: 450px; */ /* supprime ou commente */
+  cursor: pointer;
+  outline: none;
+}
+
+.candy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px #ff9800aa;
+}
+
+.candy-card:focus-within {
+  outline: 2px solid #ffc107;
+  outline-offset: 4px;
+  border-radius: 20px;
 }
 
 .candy-image {
   width: 100%;
-  height: 280px; /* image plus grande */
+  height: 220px;
   object-fit: cover;
-  background-color: #2a2a2a;
   border-radius: 12px;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.candy-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 30px #ffb74dcc;
-}
-
 .candy-card:hover .candy-image {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .candy-name {
-  font-size: 1.4rem; /* texte plus grand */
-  font-weight: 700;
-  color: #ffc107;
-  margin: 1.2rem 0 0.7rem;
+  font-family: "Aladin", cursive;
+  font-size: 1.4rem;
+  color: #ff9800;
+  margin-bottom: 0.3rem;
+}
+
+.candy-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
 }
 
 .description {
-  font-size: 1.05rem; /* texte plus grand */
-  color: #d0d0d0;
+  font-size: 1rem;
   line-height: 1.6;
+  color: #cccccc;
+  min-height: 60px;
   flex-grow: 1;
-  margin-bottom: 0.8rem;
 }
 
 .price {
-  font-size: 1.2rem; /* texte plus grand */
+  font-size: 1.2rem;
   font-weight: bold;
-  color: #ffb74d;
-  margin-bottom: 1.2rem;
+  color: #ffc107;
 }
 
 .btn-cart {
-  background: linear-gradient(45deg, #ffb74d, #ffc107);
-  color: #121212;
-  padding: 0.65rem 1.5rem;
+  background: linear-gradient(45deg, #ffc107, #ff9800);
+  color: #1a1a1a;
+  padding: 0.7rem 1.2rem;
+  border: none;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 1rem;
   cursor: pointer;
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 1rem;
 }
 
-.btn-cart:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 16px #ffb74dcc;
+.btn-cart:hover,
+.btn-cart:focus {
+  background: linear-gradient(45deg, #ff9800, #ffc107);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #ff9800;
+  outline: none;
 }
 
 /* Responsive */
-
 @media (max-width: 1024px) {
   .candies-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-  }
-
-  .candy-card {
-    min-height: 420px;
-    padding: 1.5rem 1.5rem;
-  }
-
-  .candy-image {
-    height: 240px;
-  }
-
-  .candy-name {
-    font-size: 1.25rem;
-  }
-
-  .description {
-    font-size: 1rem;
-  }
-
-  .price {
-    font-size: 1.1rem;
-  }
-
-  .btn-cart {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.3rem;
   }
 }
 
@@ -119,17 +141,12 @@
     gap: 1rem;
   }
 
-  .candy-card {
-    min-height: auto;
-    padding: 1.2rem 1rem;
-  }
-
   .candy-image {
     height: 200px;
   }
 
   .candy-name {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .description {
@@ -137,17 +154,12 @@
   }
 
   .price {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .btn-cart {
     width: 100%;
-    font-size: 0.9rem;
     padding: 0.6rem;
+    font-size: 0.95rem;
   }
-}
-
-.btn-cart:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 12px rgba(255, 152, 0, 0.6);
 }
