@@ -31,7 +31,7 @@ function Sweet() {
           <img
             src={Image}
             alt="Objets de foi mouride"
-            className="image rounded shadow"
+            className="image rounded shadow w-100 h-100"
           />
         </div>
       </div>

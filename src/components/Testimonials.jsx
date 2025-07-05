@@ -1,11 +1,12 @@
 import "../styles/Testimonials.css";
+import bamba from "../assets/bamba.jpg"; // Image de Serigne Touba
 
 const testimonialsData = [
   {
     id: 1,
-    name: "Aminata D.",
+    name: "Ahmadou B.",
     text: "Les objets achetés ont renforcé ma foi et apporté une paix profonde. Boutique sérieuse et respectueuse de la tradition.",
-    img: "/images/aminata.jpg",
+    img: bamba,
     bgClass: "bg-mouride",
   },
   {

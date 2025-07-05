@@ -69,7 +69,7 @@ function About() {
             <img
               src={fond}
               alt="Notre histoire - Boutique Mouride"
-              className="img-fluid rounded shadow"
+              className="img-fluid rounded shadow w-100 h-100"
             />
           </div>
         </div>
